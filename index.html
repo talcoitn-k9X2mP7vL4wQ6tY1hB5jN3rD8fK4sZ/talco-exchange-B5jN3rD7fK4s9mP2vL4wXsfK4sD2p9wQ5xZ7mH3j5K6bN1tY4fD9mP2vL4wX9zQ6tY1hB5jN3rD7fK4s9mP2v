@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="TalcoExchange : la messagerie de Talco ITN (TalcoITN). Recherche, messages, réactions et réponses.">
+<meta name="theme-color" content="#000000">
+<title>TalcoExchange — Messagerie Talco ITN</title>
+<meta name="google-site-verification" content="TUBi6xTFf23UYii6oMmOaSj-DRsPRPsgWL4_IAmncho" />
+<meta name="keywords" content="TalcoExchange, Talco Itn, Itnb talco github, talco exchange message, talco github, messagerie">
+<meta property="og:title" content="TalcoExchange — Talco ITN"><meta property="og:description" content="Messagerie TalcoExchange du portail Talco ITN.">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id=%27g%27%20x1=%270%27%20y1=%270%27%20x2=%271%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23c9a8ff%27/%3E%3Cstop%20offset=%27.5%27%20stop-color=%27%238b3dff%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%234a14c8%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%27h%27%20x1=%270%27%20y1=%270%27%20x2=%270%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23fff%27%20stop-opacity=%27.6%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%23fff%27%20stop-opacity=%270%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2715%27%20fill=%27url%28%23g%29%27/%3E%3Cpath%20d=%27M0%2015Q0%200%2015%200H49Q64%200%2064%2015V26Q32%2040%200%2026Z%27%20fill=%27url%28%23h%29%27/%3E%3Cpath%20d=%27M32%2012C18%2012%209%2019%209%2028S18%2044%2032%2044c2%200%204%200%206-.5L47%2051%2045%2041c5-3%2010-7%2010-13C55%2019%2046%2012%2032%2012Z%27%20fill=%27%23fff%27/%3E%3Ctext%20x=%2732%27%20y=%2731.5%27%20font-family=%27Arial%2Csans-serif%27%20font-weight=%27800%27%20font-size=%278.2%27%20text-anchor=%27middle%27%20fill=%27%236d28d9%27%3EExchange%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id=%27g%27%20x1=%270%27%20y1=%270%27%20x2=%271%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23c9a8ff%27/%3E%3Cstop%20offset=%27.5%27%20stop-color=%27%238b3dff%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%234a14c8%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%27h%27%20x1=%270%27%20y1=%270%27%20x2=%270%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23fff%27%20stop-opacity=%27.6%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%23fff%27%20stop-opacity=%270%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2715%27%20fill=%27url%28%23g%29%27/%3E%3Cpath%20d=%27M0%2015Q0%200%2015%200H49Q64%200%2064%2015V26Q32%2040%200%2026Z%27%20fill=%27url%28%23h%29%27/%3E%3Cpath%20d=%27M32%2012C18%2012%209%2019%209%2028S18%2044%2032%2044c2%200%204%200%206-.5L47%2051%2045%2041c5-3%2010-7%2010-13C55%2019%2046%2012%2032%2012Z%27%20fill=%27%23fff%27/%3E%3Ctext%20x=%2732%27%20y=%2731.5%27%20font-family=%27Arial%2Csans-serif%27%20font-weight=%27800%27%20font-size=%278.2%27%20text-anchor=%27middle%27%20fill=%27%236d28d9%27%3EExchange%3C/text%3E%3C/svg%3E">
+<script>try{window._P=Object.assign({mode:'auto',wall:0,ts:1,anim:true},JSON.parse(localStorage.talco_prefs||'{}'));window._applyP=function(){var h=document.documentElement,P=window._P;P.mode==='auto'?h.removeAttribute('data-mode'):h.setAttribute('data-mode',P.mode);h.dataset.wall=P.wall;h.dataset.anim=P.anim?'on':'off';h.style.setProperty('--ts',P.ts);localStorage.talco_prefs=JSON.stringify(P)};window._applyP()}catch(e){}</script>
+<style>
+:root{--bg:#fff;--bg2:#f2f2f7;--glass:rgba(255,255,255,.72);--text:#000;--sub:#8a8a8e;--line:rgba(60,60,67,.18);--bub:#e9e9eb;--me:#0a84ff;--acc:#0a84ff;--red:#ff3b30;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--bg2:#1c1c1e;--glass:rgba(30,30,32,.72);--text:#fff;--sub:#98989f;--line:rgba(84,84,88,.5);--bub:#262629}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{font:16px/1.35 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit;border:0;background:none;outline:0}
+button{cursor:pointer}.hidden{display:none!important}
+.glass{background:var(--glass);-webkit-backdrop-filter:saturate(180%) blur(28px);backdrop-filter:saturate(180%) blur(28px)}
+/* écrans plein */
+.full{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:calc(20px + var(--sat)) 20px calc(20px + var(--sab));background:radial-gradient(120% 80% at 20% 0%,rgba(10,132,255,.35),transparent 60%),radial-gradient(100% 70% at 90% 100%,rgba(191,90,242,.3),transparent 60%),var(--bg);overflow:auto}
+.card{width:100%;max-width:460px;border-radius:34px;padding:34px 26px;text-align:center;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.25);margin:auto}
+.logo{width:84px;height:84px;border-radius:24px;margin:0 auto 18px;background:linear-gradient(135deg,#0a84ff,#bf5af2);display:flex;align-items:center;justify-content:center;font-size:40px;box-shadow:0 14px 34px rgba(10,132,255,.45)}
+h1{font-size:30px;letter-spacing:-.6px;font-weight:800}
+.card p{color:var(--sub);font-size:15px;margin:8px 0 18px}
+.bar{height:6px;border-radius:6px;background:var(--bg2);overflow:hidden;margin-top:26px}
+.bar i{display:block;height:100%;width:0;border-radius:6px;background:linear-gradient(90deg,#0a84ff,#bf5af2)}
+.docs{text-align:left;border-radius:18px;background:var(--bg2);overflow:hidden;margin-bottom:18px}
+.docs button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;font-size:16px;border-bottom:1px solid var(--line);text-align:left}
+.docs button:last-child{border:0}.docs span{color:var(--acc);font-size:14px}
+.btn{width:100%;padding:15px;border-radius:16px;background:var(--acc);color:#fff;font-weight:600;font-size:17px;margin-top:8px}
+.btn.alt{background:var(--bg2);color:var(--red)}
+.seg{display:flex;background:var(--bg2);border-radius:12px;padding:3px;margin-bottom:16px}
+.seg button{flex:1;padding:8px;border-radius:9px;font-weight:600;font-size:14px;color:var(--sub)}
+.seg button.on{background:var(--bg);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.inp{width:100%;padding:14px 16px;border-radius:14px;background:var(--bg2);font-size:17px;margin-bottom:10px}
+.err{color:var(--red);font-size:14px;min-height:20px;margin-top:6px}
+/* app */
+#app{display:grid;grid-template-columns:minmax(300px,360px) 1fr;height:100%}
+.side{display:flex;flex-direction:column;border-right:1px solid var(--line);background:var(--bg);min-height:0;position:relative}
+.sh{padding:calc(14px + var(--sat)) 16px 8px;display:flex;justify-content:space-between;align-items:center}
+.sh h2{font-size:34px;font-weight:800;letter-spacing:-.8px}
+.ic{width:38px;height:38px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:18px}
+.sr{margin:4px 16px 10px;display:flex;align-items:center;gap:8px;background:var(--bg2);border-radius:12px;padding:0 12px}
+.sr input{flex:1;padding:10px 0}
+.list{flex:1;overflow-y:auto;padding:0 8px calc(10px + var(--sab))}
+.it{display:flex;gap:12px;align-items:center;width:100%;padding:10px 10px;border-radius:14px;text-align:left}
+.it:hover,.it.on{background:var(--bg2)}
+.av{flex:none;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:19px}
+.it .t{flex:1;min-width:0}.it b{display:block;font-weight:600}
+.it small{display:block;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.it time{color:var(--sub);font-size:13px;flex:none}
+.empty{color:var(--sub);text-align:center;padding:40px 20px;font-size:15px}
+.lab{color:var(--sub);font-size:13px;text-transform:uppercase;letter-spacing:.4px;padding:10px 12px 4px}
+.chat{display:flex;flex-direction:column;min-height:0;min-width:0;background:var(--bg)}
+.ch{display:flex;align-items:center;gap:10px;padding:calc(8px + var(--sat)) 12px 8px;border-bottom:1px solid var(--line);z-index:5}
+.ch .back{display:none;color:var(--acc);font-size:26px;width:34px}
+.ch .nm{flex:1;text-align:center;font-weight:600}
+.ch .av{width:34px;height:34px;font-size:14px}
+.msgs{flex:1;overflow-y:auto;padding:10px 12px;display:flex;flex-direction:column;overscroll-behavior:contain}
+.noch{flex:1;display:flex;align-items:center;justify-content:center;color:var(--sub)}
+/* BULLES */
+.rx{display:flex;flex-wrap:wrap;gap:4px;margin:-7px 10px 0;position:relative;z-index:2}
+.me .rx{justify-content:flex-end}.row.hasrx{margin-bottom:8px}
+.rx button{background:var(--bg2);border:2px solid var(--bg);border-radius:13px;padding:1px 7px;font-size:13px}
+.rx button.mine{background:rgba(10,132,255,.25)}
+.tm{font-size:11px;color:var(--sub);margin:3px 8px 0}
+.gone{font-style:italic;opacity:.7}
+.comp{padding:8px 10px calc(8px + var(--sab));border-top:1px solid var(--line)}
+.rp{display:flex;align-items:center;gap:8px;font-size:13px;padding:2px 8px 8px;color:var(--sub)}
+.rp div{flex:1;min-width:0;border-left:3px solid var(--acc);padding-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cw{display:flex;align-items:flex-end;gap:8px}
+.cw textarea{flex:1;resize:none;max-height:130px;padding:9px 14px;border-radius:20px;border:1px solid var(--line);font-size:16px;line-height:1.3;background:var(--bg)}
+.send{width:36px;height:36px;border-radius:50%;background:var(--acc);color:#fff;font-size:18px;font-weight:700;flex:none}
+.send:disabled{opacity:.3}
+/* menu / sheets */
+.ov{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.25)}
+#menu{position:fixed;z-index:90;width:250px;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35);border:1px solid var(--line)}
+#menu .em{display:flex;justify-content:space-around;padding:10px 6px;border-bottom:1px solid var(--line)}
+#menu .em button{font-size:24px;width:36px;height:36px;border-radius:50%}
+#menu .em button.mine{background:rgba(10,132,255,.25)}
+#menu .ac{display:block;width:100%;text-align:left;padding:12px 16px;font-size:16px}
+#menu .ac.d{color:var(--red)}
+.sheet{position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:90;width:min(560px,100%);max-height:88%;overflow:auto;border-radius:28px 28px 0 0;padding:20px 18px calc(20px + var(--sab));border:1px solid var(--line)}
+@media(min-width:760px){.sheet{bottom:auto;top:50%;transform:translate(-50%,-50%);border-radius:28px;max-height:84%}}
+.sheet h3{font-size:20px;margin-bottom:12px}
+.sheet iframe{width:100%;height:62vh;border:1px solid var(--line);border-radius:14px;background:var(--bg)}
+.toast{position:fixed;left:50%;top:calc(14px + var(--sat));transform:translateX(-50%);z-index:200;background:#111;color:#fff;padding:10px 18px;border-radius:20px;font-size:14px;max-width:90%}
+@media(max-width:759px){
+ #app{grid-template-columns:1fr}.chat{display:none}
+ body.in .side{display:none}body.in .chat{display:flex}
+ .ch .back{display:block}.b{max-width:82%}
+}
+@media(min-width:1100px){.b{max-width:min(68%,560px)}}
 
+/* ===== iOS 27 + WhatsApp ===== */
+html[data-mode=light]{--bg:#fff;--bg2:#f2f2f7;--glass:rgba(255,255,255,.72);--text:#000;--sub:#8a8a8e;--line:rgba(60,60,67,.18)}
+html[data-mode=dark]{--bg:#000;--bg2:#1c1c1e;--glass:rgba(30,30,32,.72);--text:#fff;--sub:#98989f;--line:rgba(84,84,88,.5)}
+:root{--wme:#d9fdd3;--wth:#fff;--wbg:#efeae2;--wtxt:#111b21;--wtime:#667781;--whead:#008069;--wcomp:#f0f2f5;--winp:#fff;--ts:1;--doodle:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' fill='none' stroke='%23808080' stroke-opacity='.13' stroke-width='2'%3E%3Ccircle cx='15' cy='15' r='6'/%3E%3Cpath d='M55 12l6 10h-12zM20 60q8-10 16 0t16 0'/%3E%3Crect x='60' y='55' width='14' height='14' rx='4'/%3E%3C/svg%3E")}
+@media(prefers-color-scheme:dark){html:not([data-mode=light]){--wme:#005c4b;--wth:#202c33;--wbg:#0b141a;--wtxt:#e9edef;--wtime:#8696a0;--whead:#202c33;--wcomp:#202c33;--winp:#2a3942}}
+html[data-mode=dark]{--wme:#005c4b;--wth:#202c33;--wbg:#0b141a;--wtxt:#e9edef;--wtime:#8696a0;--whead:#202c33;--wcomp:#202c33;--winp:#2a3942}
+.msgs{padding:10px 5%;background-color:var(--wbg);background-image:var(--doodle)}
+html[data-wall="1"] .msgs{background-image:none}
+html[data-wall="2"] .msgs{background-image:linear-gradient(160deg,#5b2be0,#c850c0 60%,#ffb86c)}
+html[data-wall="3"] .msgs{background-image:linear-gradient(160deg,#0f2027,#2c5364)}
+.row{display:flex;flex-direction:column;margin-top:2px}.row.first{margin-top:9px}.row.me{align-items:flex-end}.row.them{align-items:flex-start}
+.b{position:relative;display:flow-root;max-width:min(80%,540px);padding:6px 8px 6px 9px;border-radius:9px;background:var(--wth);color:var(--wtxt);box-shadow:0 1px .5px rgba(11,20,26,.18);font-size:calc(15px*var(--ts));line-height:1.38;overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap;cursor:pointer}
+.row.me .b{background:var(--wme)}
+.row.me.first .b{border-top-right-radius:0}.row.them.first .b{border-top-left-radius:0}
+.row.first .b::after{content:"";position:absolute;top:0;width:8px;height:13px}
+.row.them.first .b::after{left:-8px;background:var(--wth);clip-path:polygon(100% 0,100% 100%,0 0)}
+.row.me.first .b::after{right:-8px;background:var(--wme);clip-path:polygon(0 0,100% 0,0 100%)}
+.mt{float:right;margin:7px 0 -4px 12px;font-size:11px;line-height:1;color:var(--wtime);white-space:nowrap}
+.tk{font-style:normal;margin-left:3px;letter-spacing:-2px}.tk.rd{color:#53bdeb}
+.q{background:rgba(0,0,0,.07);border-left:4px solid #06cf9c;border-radius:6px;padding:4px 8px;margin:-2px -2px 5px;font-size:calc(13px*var(--ts));opacity:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:normal}
+.row.them .q{border-color:#a45cff}.q b{display:block;font-weight:600;color:#06cf9c}.row.them .q b{color:#a45cff}
+.rx button{background:var(--wth);color:var(--wtxt);border:0;box-shadow:0 1px 2px rgba(0,0,0,.3)}.rx button.mine{background:var(--wme)}
+.day{align-self:center;margin:12px 0 6px}.day span{display:block;background:var(--wth);color:var(--wtime);font-size:12px;padding:4px 11px;border-radius:8px;box-shadow:0 1px .5px rgba(11,20,26,.15)}
+.ch{background:var(--whead)!important;color:#fff;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.ch .back{color:#fff;order:0}.ch .av{order:1}.ch .nm{order:2;text-align:left;font-size:17px}
+.comp{background:var(--wcomp)!important;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.cw textarea{background:var(--winp);color:var(--wtxt);border:0;border-radius:22px;padding:10px 16px}
+.send{width:42px;height:42px;background:#00a884;display:flex;align-items:center;justify-content:center}.send svg{width:20px;height:20px;fill:#fff}
+.rp{color:var(--wtime)}.rp div{border-color:#06cf9c}
+/* logo icône */
+#splash .logo,#auth .logo{font-size:0;background:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id=%27g%27%20x1=%270%27%20y1=%270%27%20x2=%271%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23c9a8ff%27/%3E%3Cstop%20offset=%27.5%27%20stop-color=%27%238b3dff%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%234a14c8%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id=%27h%27%20x1=%270%27%20y1=%270%27%20x2=%270%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23fff%27%20stop-opacity=%27.6%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%23fff%27%20stop-opacity=%270%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2715%27%20fill=%27url%28%23g%29%27/%3E%3Cpath%20d=%27M0%2015Q0%200%2015%200H49Q64%200%2064%2015V26Q32%2040%200%2026Z%27%20fill=%27url%28%23h%29%27/%3E%3Cpath%20d=%27M32%2012C18%2012%209%2019%209%2028S18%2044%2032%2044c2%200%204%200%206-.5L47%2051%2045%2041c5-3%2010-7%2010-13C55%2019%2046%2012%2032%2012Z%27%20fill=%27%23fff%27/%3E%3Ctext%20x=%2732%27%20y=%2731.5%27%20font-family=%27Arial%2Csans-serif%27%20font-weight=%27800%27%20font-size=%278.2%27%20text-anchor=%27middle%27%20fill=%27%236d28d9%27%3EExchange%3C/text%3E%3C/svg%3E") center/cover;box-shadow:0 16px 40px rgba(139,61,255,.55);animation:float 4s ease-in-out infinite}
+/* animations */
+@keyframes up{from{opacity:0;translate:0 14px}}@keyframes pop{from{opacity:0;scale:.86}}@keyframes fadeIn{from{opacity:0}}@keyframes sheetIn{from{opacity:0;translate:0 50px}}
+@keyframes float{50%{translate:0 -7px}}@keyframes blob{to{transform:translate(12vw,-8vh) scale(1.25)}}@keyframes msgIn{from{opacity:0;transform:translateY(10px) scale(.94)}}
+.full{animation:fadeIn .5s}.full::before,.full::after{content:"";position:fixed;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.45;z-index:-1;pointer-events:none;animation:blob 16s ease-in-out infinite alternate}
+.full::before{left:-25vmax;top:-20vmax;background:#8b3dff}.full::after{right:-25vmax;bottom:-25vmax;background:#0a84ff;animation-delay:-8s}
+.card{animation:up .7s cubic-bezier(.22,1,.36,1)}.card .inp,.card .btn,.card .seg,.docs{animation:up .6s cubic-bezier(.22,1,.36,1) both}
+.card .inp:nth-of-type(1){animation-delay:.1s}.card .inp:nth-of-type(2){animation-delay:.18s}.card .btn{animation-delay:.26s}
+.inp{transition:box-shadow .25s,background .25s}.inp:focus{box-shadow:0 0 0 3px rgba(10,132,255,.45)}
+.btn,.send,.ic,.it,.seg button,.rx button{transition:transform .2s cubic-bezier(.34,1.56,.64,1),background .25s,opacity .25s}
+.btn:active,.send:active,.ic:active{transform:scale(.93)}.it:active{transform:scale(.98)}.btn:hover{filter:brightness(1.08)}
+.it{animation:up .45s cubic-bezier(.22,1,.36,1) both}.it:nth-child(2){animation-delay:.04s}.it:nth-child(3){animation-delay:.08s}.it:nth-child(4){animation-delay:.12s}.it:nth-child(5){animation-delay:.16s}
+.row.new .b{animation:msgIn .35s cubic-bezier(.34,1.56,.64,1);transform-origin:bottom}
+.sheet{animation:sheetIn .5s cubic-bezier(.32,.72,0,1)}#menu{animation:pop .25s cubic-bezier(.34,1.56,.64,1)}.ov{animation:fadeIn .25s}
+.toast{animation:up .3s}
+.setrow{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 4px}
+.sw{appearance:none;-webkit-appearance:none;width:51px;height:31px;border-radius:16px;background:rgba(120,120,128,.32);position:relative;transition:.3s;flex:none}.sw:checked{background:#34c759}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.3);transition:.35s cubic-bezier(.34,1.56,.64,1)}.sw:checked::after{transform:translateX(20px)}
+.walls{display:flex;gap:10px}.walls button{width:56px;height:76px;border-radius:14px;border:3px solid transparent;transition:.25s}.walls button.on{border-color:var(--acc);transform:scale(1.06)}
+input[type=range]{accent-color:#0a84ff;width:150px}
+html[data-anim=off] *,html[data-anim=off] *::before,html[data-anim=off] *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media(max-width:759px){
+ .chat{display:flex!important;position:fixed;inset:0;z-index:20;transform:translateX(100%);transition:transform .42s cubic-bezier(.32,.72,0,1)}
+ body.in .chat{transform:none}
+ .side{display:flex!important;transition:transform .42s cubic-bezier(.32,.72,0,1),opacity .42s}
+ body.in .side{transform:translateX(-24%);opacity:.5}
+ .b{max-width:84%}
+}
+</style>
+</head>
+<body>
+
+<!-- Splash + barre de progression -->
+<div id="splash" class="full"><div class="card glass"><div class="logo">💬</div><h1>TalcoExchange</h1><p>Messagerie</p><div class="bar"><i id="pb"></i></div></div></div>
+
+<!-- Consentement (gros, 1re fois) -->
+<div id="consent" class="full hidden"><div class="card glass">
+ <div class="logo">🔐</div><h1>Avant de créer ton compte</h1>
+ <p>Tes messages et ton pseudo sont stockés pour que le service fonctionne. Lis et accepte ces documents pour continuer.</p>
+ <div class="docs">
+  <button data-doc="conditions-utilisation.html">Conditions d'utilisation <span>Lire ›</span></button>
+  <button data-doc="cookies.html">Cookies et stockage local <span>Lire ›</span></button>
+  <button data-doc="confidentialite.html">Politique de confidentialité <span>Lire ›</span></button>
+ </div>
+ <button class="btn" id="accept">Accepter et continuer</button>
+ <button class="btn alt" id="refuse">Refuser</button>
+</div></div>
+
+<!-- Refus -->
+<div id="refused" class="full hidden"><div class="card glass">
+ <div class="logo">⛔</div><h1>Accès impossible</h1>
+ <p>Tes données (pseudo, messages) doivent être stockées pour que la messagerie fonctionne. Sans ton accord, tu ne peux pas y accéder.</p>
+ <button class="btn" id="reconsider">Revoir les documents</button>
+</div></div>
+
+<!-- Compte -->
+<div id="auth" class="full hidden"><div class="card glass">
+ <div class="logo">💬</div><h1>Bienvenue</h1><p>Crée ton compte ou connecte-toi.</p>
+ <div class="seg"><button id="tSign" class="on">Créer un compte</button><button id="tLog">Connexion</button></div>
+ <input class="inp" id="un" placeholder="Pseudo" autocapitalize="none" autocomplete="username" maxlength="20">
+ <input class="inp" id="pw" type="password" placeholder="Mot de passe (6 car. min.)" autocomplete="current-password">
+ <input class="inp" id="ic" placeholder="Code d'invitation" inputmode="numeric" autocomplete="off">
+ <button class="btn" id="go">Créer mon compte</button><div class="err" id="aerr"></div>
+</div></div>
+
+<div id="app" class="hidden">
+ <aside class="side">
+  <div class="sh"><h2>Messages</h2><button class="ic glass" id="gear" aria-label="Paramètres">⚙️</button></div>
+  <label class="sr"><span>🔍</span><input id="q" placeholder="Rechercher un utilisateur" autocomplete="off" autocapitalize="none"></label>
+  <div class="list" id="list"></div>
+ </aside>
+ <section class="chat">
+  <div id="noch" class="noch">Sélectionne une conversation</div>
+  <div id="chv" class="hidden" style="display:flex;flex-direction:column;flex:1;min-height:0">
+   <div class="ch glass"><button class="back" id="back">‹</button><div class="nm" id="cn"></div><div class="av" id="cav"></div></div>
+   <div class="msgs" id="msgs"></div>
+   <div class="comp glass">
+    <div class="rp hidden" id="rp"><div id="rpt"></div><button id="rpx">✕</button></div>
+    <div class="cw"><textarea id="tx" rows="1" placeholder="Message" maxlength="2000"></textarea><button class="send" id="sd" disabled aria-label="Envoyer"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button></div>
+   </div>
+  </div>
+ </section>
+</div>
+
+<div id="layer"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>
+/* Config Firebase du projet exchange-f4322 */
+const firebaseConfig={
+  apiKey:"AIzaSyAmhu0sxt5v_D6ByT94z66cqlnWSIz5fow",
+  authDomain:"exchange-f4322.firebaseapp.com",
+  /* ⚠️ Vérifie cette URL dans Console Firebase > Realtime Database (en haut de l'onglet Données) */
+  databaseURL:"https://exchange-f4322-default-rtdb.firebaseio.com",
+  projectId:"exchange-f4322",
+  storageBucket:"exchange-f4322.firebasestorage.app",
+  messagingSenderId:"10821754686",
+  appId:"1:10821754686:web:4be1a2455315d41646566f"
+};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth(),db=firebase.database(),TS=firebase.database.ServerValue.TIMESTAMP;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS=localStorage,CV='2026-10-18',EMO=['❤️','👍','😂','😮','😢','🙏'];
+const toast=t=>{const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),3000)};
+const hue=s=>{let h=0;for(const c of s)h=(h*31+c.charCodeAt(0))%360;return h};
+const avh=n=>`<div class="av" style="background:hsl(${hue(n)} 65% 50%)">${esc(n[0]||'?').toUpperCase()}</div>`;
+const hm=t=>t?new Date(t).toLocaleTimeString('fr',{hour:'2-digit',minute:'2-digit'}):'';
+const cid=(a,b)=>[a,b].sort().join('_');
+let me=null,cur=null,reply=null,mref=null,mode='sign',chatsData={};
+
+/* ===== Splash 3s (1re fois) puis 1s ===== */
+const first=!LS.talco_seen;
+function splash(ms){return new Promise(r=>{const b=$('pb');b.style.transition=`width ${ms}ms linear`;requestAnimationFrame(()=>requestAnimationFrame(()=>b.style.width='100%'));setTimeout(()=>{$('splash').classList.add('hidden');r()},ms)})}
+const consented=()=>{try{return JSON.parse(LS.talco_consent||'{}').v===CV}catch{return false}};
+function boot(){ if(consented()){startAuth()}else{$('consent').classList.remove('hidden')} }
+splash(first?3000:1000).then(()=>{LS.talco_seen='1';boot()});
+
+/* ===== Consentement ===== */
+$('accept').onclick=()=>{LS.talco_consent=JSON.stringify({v:CV,ts:Date.now()});$('consent').classList.add('hidden');startAuth()};
+$('refuse').onclick=()=>{$('consent').classList.add('hidden');$('refused').classList.remove('hidden')};
+$('reconsider').onclick=()=>{$('refused').classList.add('hidden');$('consent').classList.remove('hidden')};
+function openDoc(f){
+  const l=$('layer');l.innerHTML=`<div class="ov" id="ov"></div><div class="sheet glass"><h3>Document</h3><iframe src="${f}" title="Document légal"></iframe><button class="btn" id="cl">Fermer</button></div>`;
+  $('ov').onclick=$('cl').onclick=()=>l.innerHTML='';
+}
+document.querySelectorAll('[data-doc]').forEach(b=>b.onclick=()=>openDoc(b.dataset.doc));
+
+/* ===== Compte ===== */
+function setMode(m){mode=m;$('tSign').classList.toggle('on',m==='sign');$('tLog').classList.toggle('on',m==='log');$('go').textContent=m==='sign'?'Créer mon compte':'Se connecter';$('ic').classList.toggle('hidden',m!=='sign');$('aerr').textContent=''}
+$('tSign').onclick=()=>setMode('sign');$('tLog').onclick=()=>setMode('log');
+const mail=n=>n.toLowerCase()+'@talcoitn.app';
+let signing=false;
+$('go').onclick=async()=>{
+  const n=$('un').value.trim(),p=$('pw').value,e=$('aerr');e.textContent='';
+  if(!/^[A-Za-z0-9_.-]{3,20}$/.test(n))return e.textContent='Pseudo : 3 à 20 caractères (lettres, chiffres, _ . -)';
+  if(p.length<6)return e.textContent='Mot de passe trop court';
+  if(!consented())return boot();
+  try{
+    if(mode==='sign'){
+      const code=$('ic').value.trim();if(!code)return e.textContent="Code d'invitation requis";
+      signing=true;const c=await auth.createUserWithEmailAndPassword(mail(n),p);
+      try{await db.ref('signup/'+c.user.uid).set(code);await db.ref('users/'+c.user.uid).set({name:n,nameLower:n.toLowerCase(),createdAt:TS,consentAt:TS,consentV:CV})}
+      catch{await c.user.delete().catch(()=>{});signing=false;throw {code:'x/code'}}
+      signing=false;await enter(c.user);
+    }else await auth.signInWithEmailAndPassword(mail(n),p);
+  }catch(x){
+    signing=false;
+    const m={'x/code':"Code d'invitation invalide",'auth/email-already-in-use':'Ce pseudo est déjà pris','auth/invalid-credential':'Pseudo ou mot de passe incorrect','auth/wrong-password':'Mot de passe incorrect','auth/user-not-found':'Compte introuvable','auth/weak-password':'Mot de passe trop faible','auth/too-many-requests':"Trop d'essais, réessaie plus tard",'auth/operation-not-allowed':'Active Email/Mot de passe dans Firebase Auth'};
+    e.textContent=m[x.code]||x.message;
+  }
+};
+async function enter(u){
+  let s=await db.ref('users/'+u.uid).get();
+  for(let i=0;i<6&&!s.exists();i++){await new Promise(r=>setTimeout(r,400));s=await db.ref('users/'+u.uid).get()}
+  if(!s.exists()){toast('Profil introuvable');return auth.signOut()}
+  me={uid:u.uid,name:s.val().name};
+  $('auth').classList.add('hidden');$('app').classList.remove('hidden');
+  db.ref('userChats/'+me.uid).on('value',sn=>{chatsData=sn.val()||{};if(!$('q').value.trim())renderChats()},()=>toast('Accès refusé : vérifie les règles'));
+}
+function startAuth(){
+  $('auth').classList.remove('hidden');setMode('sign');
+  auth.onAuthStateChanged(u=>{
+    if(signing)return;
+    if(!u){me=null;$('app').classList.add('hidden');$('auth').classList.remove('hidden');return}
+    enter(u).catch(()=>toast('Connexion impossible'));
+  });
+}
+
+/* ===== Liste + recherche ===== */
+function item(uid,name,sub,t,on){return `<button class="it${on?' on':''}" data-u="${esc(uid)}" data-n="${esc(name)}">${avh(name)}<div class="t"><b>${esc(name)}</b><small>${esc(sub)}</small></div><time>${t?hm(t):''}</time></button>`}
+function renderChats(){
+  const a=Object.values(chatsData).sort((x,y)=>(y.ts||0)-(x.ts||0));
+  $('list').innerHTML=a.length?a.map(c=>item(c.with,c.name,c.last||'',c.ts,cur&&cur.uid===c.with)).join(''):'<div class="empty">Aucune conversation.<br>Recherche un utilisateur ci-dessus pour commencer.</div>';
+}
+let st;
+$('q').oninput=()=>{
+  clearTimeout(st);const q=$('q').value.trim().toLowerCase();
+  if(!q)return renderChats();
+  st=setTimeout(async()=>{
+    try{
+      const s=await db.ref('users').orderByChild('nameLower').startAt(q).endAt(q+'\uf8ff').limitToFirst(20).get();
+      const r=[];s.forEach(c=>{if(c.key!==me.uid)r.push(item(c.key,c.val().name,'Envoyer un message',0))});
+      $('list').innerHTML='<div class="lab">Utilisateurs</div>'+(r.join('')||'<div class="empty">Aucun résultat</div>');
+    }catch{toast('Recherche impossible')}
+  },250);
+};
+$('list').onclick=e=>{const b=e.target.closest('.it');if(b){openChat(b.dataset.u,b.dataset.n);$('q').value='';renderChats()}};
+
+/* ===== Conversation ===== */
+function openChat(uid,name){
+  if(mref)mref.off();
+  cur={id:cid(me.uid,uid),uid,name};reply=null;showReply();
+  $('noch').classList.add('hidden');$('chv').classList.remove('hidden');
+  $('cn').textContent=name;$('cav').outerHTML=avh(name).replace('class="av"','class="av" id="cav"');
+  document.body.classList.add('in');renderChats();
+  $('msgs').innerHTML='';delete $('msgs').dataset.init;seen=new Set();otherRead=0;myRead=0;if(rref)rref.off();
+  rref=db.ref('reads/'+cur.id+'/'+uid);rref.on('value',x=>{otherRead=x.val()||0;if(lastSnap)renderMsgs(lastSnap)});
+  mref=db.ref('messages/'+cur.id).orderByChild('ts').limitToLast(300);
+  mref.on('value',renderMsgs,()=>toast('Accès refusé'));
+}
+$('back').onclick=()=>{document.body.classList.remove('in');if(mref)mref.off();if(rref)rref.off();cur=null;renderChats()};
+let msgData={},lastSnap=null,otherRead=0,myRead=0,seen=new Set(),rref=null;
+const dk=t=>{const d=new Date(t),f=x=>x.toDateString();return f(d)===f(new Date())?"Aujourd'hui":f(d)===f(new Date(Date.now()-864e5))?'Hier':d.toLocaleDateString('fr',{weekday:'long',day:'numeric',month:'long'})};
+function renderMsgs(sn){
+  lastSnap=sn;
+  const el=$('msgs'),near=el.scrollHeight-el.scrollTop-el.clientHeight<140,init=!!el.dataset.init;
+  const a=[];sn.forEach(c=>{a.push({id:c.key,...c.val()})});a.sort((x,y)=>(x.ts||Date.now())-(y.ts||Date.now()));
+  msgData=Object.fromEntries(a.map(m=>[m.id,m]));
+  let h='',pd='';
+  a.forEach((m,i)=>{
+    const p=a[i-1],T=m.ts||Date.now(),day=new Date(T).toDateString(),mine=m.from===me.uid,nd=day!==pd;
+    if(nd){h+=`<div class="day"><span>${dk(T)}</span></div>`;pd=day}
+    const first=nd||!p||p.from!==m.from||T-(p.ts||T)>600000;
+    const rs=m.reactions||{},g={};for(const u in rs)(g[rs[u]]=g[rs[u]]||[]).push(u);
+    const rx=Object.keys(g).map(k=>`<button data-m="${m.id}" data-e="${k}" class="${g[k].includes(me.uid)?'mine':''}">${k}${g[k].length>1?' '+g[k].length:''}</button>`).join('');
+    const q=m.reply?`<div class="q"><b>${esc(m.reply.name)}</b>${esc(m.reply.text)}</div>`:'';
+    const rd=T<=otherRead,tk=mine?`<i class="tk${rd?' rd':''}">${rd?'✓✓':'✓'}</i>`:'';
+    h+=`<div class="row ${mine?'me':'them'}${first?' first':''}${rx?' hasrx':''}${init&&!seen.has(m.id)?' new':''}" id="m-${m.id}"><div class="b" data-m="${m.id}">${q}${esc(m.text)}<span class="mt">${hm(T)}${tk}</span></div>${rx?`<div class="rx">${rx}</div>`:''}</div>`;
+  });
+  a.forEach(m=>seen.add(m.id));el.innerHTML=h;
+  if(near||!init){el.scrollTop=el.scrollHeight;el.dataset.init=1}
+  const lo=[...a].reverse().find(m=>m.from!==me.uid);
+  if(lo&&cur&&(lo.ts||0)>myRead&&!document.hidden){myRead=lo.ts;db.ref('reads/'+cur.id+'/'+me.uid).set(TS).catch(()=>{})}
+}
+$('msgs').onclick=e=>{
+  const r=e.target.closest('.rx button');if(r)return react(r.dataset.m,r.dataset.e);
+    const b=e.target.closest('.b');if(b&&!getSelection().toString())menu(b);
+};
+function react(id,em){
+  const r=db.ref(`messages/${cur.id}/${id}/reactions/${me.uid}`);
+  (msgData[id]?.reactions?.[me.uid]===em)?r.remove():r.set(em);
+}
+function menu(b){
+  const id=b.dataset.m,m=msgData[id];if(!m)return;
+  const rc=b.getBoundingClientRect(),mine=m.from===me.uid,mr=m.reactions?.[me.uid];
+  const l=$('layer');
+  l.innerHTML=`<div class="ov" id="ov"></div><div id="menu" class="glass"><div class="em">${EMO.map(e=>`<button data-e="${e}" class="${mr===e?'mine':''}">${e}</button>`).join('')}</div><button class="ac" data-a="r">↩︎ Répondre</button><button class="ac" data-a="c">⧉ Copier</button>${mine?'<button class="ac d" data-a="d">🗑 Supprimer</button>':''}</div>`;
+  const mn=$('menu'),h=mn.offsetHeight;
+  let top=rc.top-h-8;if(top<10)top=Math.min(rc.bottom+8,innerHeight-h-10);
+  let left=mine?rc.right-250:rc.left;left=Math.max(10,Math.min(left,innerWidth-260));
+  mn.style.top=top+'px';mn.style.left=left+'px';
+  const close=()=>l.innerHTML='';$('ov').onclick=close;
+  mn.onclick=async e=>{
+    const t=e.target.closest('button');if(!t)return;close();
+    if(t.dataset.e)return react(id,t.dataset.e);
+    if(t.dataset.a==='r'){reply={id,name:mine?'Moi':cur.name,text:m.text.slice(0,140)};showReply();$('tx').focus()}
+    if(t.dataset.a==='c')navigator.clipboard?.writeText(m.text).then(()=>toast('Copié'));
+    if(t.dataset.a==='d'&&confirm('Supprimer ce message pour tout le monde ?')){
+      try{await db.ref(`messages/${cur.id}/${id}`).remove()}catch{toast('Suppression impossible')}
+    }
+  };
+}
+function showReply(){$('rp').classList.toggle('hidden',!reply);if(reply)$('rpt').textContent='Réponse à '+reply.name+' : '+reply.text}
+$('rpx').onclick=()=>{reply=null;showReply()};
+const tx=$('tx');
+tx.oninput=()=>{tx.style.height='auto';tx.style.height=Math.min(tx.scrollHeight,130)+'px';$('sd').disabled=!tx.value.trim()};
+tx.onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey&&innerWidth>=760){e.preventDefault();send()}};
+$('sd').onclick=send;
+async function send(){
+  const t=tx.value.trim();if(!t||!cur)return;
+  const o={from:me.uid,text:t,ts:TS};if(reply)o.reply={id:reply.id,name:reply.name,text:reply.text};
+  tx.value='';tx.style.height='auto';$('sd').disabled=true;const rp=reply;reply=null;showReply();
+  const key=db.ref('messages/'+cur.id).push().key,u={};
+  u[`messages/${cur.id}/${key}`]=o;
+  u[`userChats/${me.uid}/${cur.id}`]={with:cur.uid,name:cur.name,last:t.slice(0,80),ts:TS};
+  u[`userChats/${cur.uid}/${cur.id}`]={with:me.uid,name:me.name,last:t.slice(0,80),ts:TS};
+  try{await db.ref().update(u)}catch{toast('Envoi impossible');tx.value=t;reply=rp;showReply()}
+}
+
+/* ===== Paramètres ===== */
+$('gear').onclick=()=>{
+  const l=$('layer'),P=window._P,W=['linear-gradient(#efeae2,#e4ddd0)','#fff','linear-gradient(160deg,#5b2be0,#c850c0)','linear-gradient(160deg,#0f2027,#2c5364)'];
+  l.innerHTML=`<div class="ov" id="ov"></div><div class="sheet glass"><h3>Paramètres</h3>
+  <div class="lab">Compte</div><div class="docs"><button style="cursor:default">Connecté en tant que <span>${esc(me.name)}</span></button></div>
+  <div class="lab">Apparence</div><div class="seg" id="sm"><button data-v="auto">Auto</button><button data-v="light">Clair</button><button data-v="dark">Sombre</button></div>
+  <div class="lab">Fond des discussions</div><div class="walls" id="sw">${W.map((w,i)=>`<button data-v="${i}" style="background:${w}"></button>`).join('')}</div>
+  <div class="setrow"><span>Taille du texte</span><input type="range" id="rg" min=".85" max="1.35" step=".05" value="${P.ts}"></div>
+  <div class="setrow"><span>Animations</span><input type="checkbox" class="sw" id="an" ${P.anim?'checked':''}></div>
+  <div class="lab">Légal</div><div class="docs"><button data-doc="conditions-utilisation.html">Conditions d'utilisation <span>›</span></button><button data-doc="cookies.html">Cookies et stockage local <span>›</span></button><button data-doc="confidentialite.html">Politique de confidentialité <span>›</span></button><button data-doc="mentions-legales.html">Mentions légales <span>›</span></button></div>
+  <button class="btn alt" id="rev">Retirer mon consentement</button><button class="btn alt" id="out">Se déconnecter</button><button class="btn" id="cl">Fermer</button></div>`;
+  const mark=()=>{l.querySelectorAll('#sm button').forEach(b=>b.classList.toggle('on',b.dataset.v===P.mode));l.querySelectorAll('#sw button').forEach(b=>b.classList.toggle('on',+b.dataset.v===+P.wall))};mark();
+  $('sm').onclick=e=>{const b=e.target.closest('button');if(b){P.mode=b.dataset.v;window._applyP();mark()}};
+  $('sw').onclick=e=>{const b=e.target.closest('button');if(b){P.wall=+b.dataset.v;window._applyP();mark()}};
+  $('rg').oninput=e=>{P.ts=+e.target.value;window._applyP()};$('an').onchange=e=>{P.anim=e.target.checked;window._applyP()};
+  $('ov').onclick=$('cl').onclick=()=>l.innerHTML='';
+  l.querySelectorAll('[data-doc]').forEach(b=>b.onclick=()=>openDoc(b.dataset.doc));
+  $('out').onclick=()=>{l.innerHTML='';if(mref)mref.off();if(rref)rref.off();db.ref('userChats/'+me.uid).off();auth.signOut().then(()=>location.reload())};
+  $('rev').onclick=()=>{if(confirm('Sans consentement, tu ne pourras plus utiliser la messagerie. Continuer ?')){delete LS.talco_consent;auth.signOut().finally(()=>location.reload())}};
+};
+/* hauteur réelle iOS */
+const vh=()=>document.documentElement.style.height=innerHeight+'px';addEventListener('resize',vh);vh();
+</script>
+</body>
+</html>
