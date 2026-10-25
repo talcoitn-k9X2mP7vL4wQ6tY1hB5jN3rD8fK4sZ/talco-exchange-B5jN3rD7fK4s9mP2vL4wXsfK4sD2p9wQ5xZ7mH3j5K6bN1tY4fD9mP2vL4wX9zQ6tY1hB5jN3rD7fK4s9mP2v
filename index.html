@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -720,6 +720,7 @@ html[data-tm=under] .tm2{display:block}html[data-tm=under] .mt,html[data-tm=off]
 @media(min-width:960px){.gate-bubbles{display:none}}
 @media(min-width:960px) and (max-height:860px){.gate-main{zoom:.86}}
 @media(max-width:959px) and (max-height:760px){.gate-main{zoom:.9}}
+#layer{position:fixed;inset:0;z-index:600;pointer-events:none}#layer>*{pointer-events:auto}.toast{z-index:700}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -779,6 +780,7 @@ html[data-tm=under] .tm2{display:block}html[data-tm=under] .mt,html[data-tm=off]
               <line x1="1" y1="1" x2="23" y2="23" />
             </svg>
           </button></div>
+   <button type="button" class="plink2" id="forgot" style="margin:-.1rem 0 .7rem auto">Mot de passe oublié ?</button>
    <div class="gate-hint" id="capsHint" style="display:none">⇪ Verrouillage majuscules activé</div>
    <label class="rm2"><span>Rester connecté sur cet appareil</span><input type="checkbox" class="sw" id="stay" checked></label>
    <button class="gate-btn" id="btnLogin">Se connecter</button>
@@ -902,7 +904,7 @@ let me=null,cur=null,reply=null,mref=null,mode='log',chatsData={};
 
 /* ===== Splash 3s (1re fois) puis 1s ===== */
 const consented=()=>{try{return JSON.parse(LS.talco_consent||'{}').v===CV}catch{return false}};
-function boot(){ if(consented()){startAuth()}else{$('consent').classList.remove('hidden')} }
+function boot(){handleAction(); if(consented()){startAuth()}else{$('consent').classList.remove('hidden')} }
 setTimeout(boot,0);
 
 /* ===== Consentement ===== */
@@ -982,7 +984,7 @@ async function createAccount(){
     await fs.doc('private/'+u.uid).set({firstName:f,lastName:l,email:em,phone:W.phone||'',createdAt:FV.serverTimestamp()});
   }catch(e2){await u.delete().catch(()=>{});throw {code:'x/fs',message:'Profil non enregistré ('+(e2.code||e2.message)+') : publie les règles Firestore.'}}
   if(code){try{await db.ref('signup/'+u.uid).set(code)}catch{await u.delete().catch(()=>{});throw {code:'x/code'}}}
-  else{try{await u.sendEmailVerification()}catch{}}
+  else{try{await u.sendEmailVerification(ACS())}catch{}}
   LS.talco_last=useReal?em:un;LS.talco_newacc='1';signing=false;
   return {u,code:!!code};
 }
@@ -1008,14 +1010,15 @@ async function enter(u){
 }
 function needAccess(u){
   $('auth').classList.add('hidden');const l=$('layer'),real=u.email&&!/@talcoexchange\.app$/.test(u.email);
-  l.innerHTML=`<div class="ov"></div><div class="sheet glass"><h3>Active ton compte</h3>${real?`<p class="lab" style="text-transform:none">Un e-mail de vérification a été envoyé à <b>${esc(u.email)}</b>. Clique sur le lien, puis reviens ici.</p><button class="btn" id="vk">J'ai vérifié mon e-mail</button><button class="btn alt" id="vs" style="color:var(--acc)">Renvoyer l'e-mail</button><div class="lab">Ou avec un code</div>`:`<p class="lab" style="text-transform:none">Entre ton code d'invitation pour activer la messagerie.</p>`}<input class="inp" id="c2" inputmode="numeric" placeholder="Code d'invitation" autocomplete="off"><div class="err" id="c2e"></div><button class="btn ${real?'alt':''}" id="c2b" style="${real?'color:var(--acc)':''}">Valider le code</button><button class="btn alt" id="c2o">Se déconnecter</button></div>`;
+  l.innerHTML=`<div class="ov"></div><div class="sheet glass"><h3>Active ton compte</h3>${real?`<p class="lab" style="text-transform:none">Un e-mail de vérification a été envoyé à <b>${esc(u.email)}</b>. Clique sur le lien (regarde aussi les spams). Cette page continue toute seule dès que c'est vérifié.</p><button class="btn" id="vk">J'ai vérifié mon e-mail</button><button class="btn alt" id="vs" style="color:var(--acc)">Renvoyer l'e-mail</button><div class="lab">Ou avec un code</div>`:`<p class="lab" style="text-transform:none">Entre ton code d'invitation pour activer la messagerie.</p>`}<input class="inp" id="c2" inputmode="numeric" placeholder="Code d'invitation" autocomplete="off"><div class="err" id="c2e"></div><button class="btn ${real?'alt':''}" id="c2b" style="${real?'color:var(--acc)':''}">Valider le code</button><button class="btn alt" id="c2o">Se déconnecter</button></div>`;
   const done=async()=>{l.innerHTML='';await enter(auth.currentUser)};
   if(real){
     $('vk').onclick=async()=>{try{await u.reload();await auth.currentUser.getIdToken(true);if(auth.currentUser.emailVerified){await db.ref('signup/'+u.uid).set('email');done()}else $('c2e').textContent="Pas encore vérifié : ouvre le lien reçu par e-mail"}catch(x){$('c2e').textContent='Vérification impossible ('+(x.code||x.message)+')'}};
-    $('vs').onclick=async()=>{try{await u.sendEmailVerification();toast('E-mail renvoyé')}catch{toast('Réessaie dans un instant')}};
+    $('vs').onclick=async()=>{try{await u.sendEmailVerification(ACS());toast('E-mail renvoyé')}catch{toast('Réessaie dans un instant')}};
   }
   $('c2b').onclick=async()=>{try{await db.ref('signup/'+u.uid).set($('c2').value.trim());done()}catch{$('c2e').textContent='Code invalide'}};
   $('c2o').onclick=()=>{l.innerHTML='';auth.signOut()};
+  if(real){const poll=setInterval(async()=>{if(!document.getElementById('c2b'))return clearInterval(poll);try{await auth.currentUser.reload();if(auth.currentUser.emailVerified){clearInterval(poll);await auth.currentUser.getIdToken(true);await db.ref('signup/'+u.uid).set('email');done()}}catch{}},3000)}
 }
 function pushPres(){if(!me)return;const r=db.ref('presence/'+me.uid),P=window._P,t=P.seen===false?0:TS;r.onDisconnect().set({on:false,ts:t}).then(()=>r.set({on:P.pres!==false,ts:t})).catch(()=>{})}
 let started=false;
@@ -1366,7 +1369,7 @@ async function openContact(){
   const u=auth.currentUser,real=u.email&&!/@talcoexchange\.app$/.test(u.email);
   sheet(`<h3>Téléphone et e-mail</h3><div class="lab">E-mail de connexion</div><div class="hist">${real?esc(u.email)+(u.emailVerified?' · ✓ vérifié':' · non vérifié'):"Aucun e-mail (compte par nom d'utilisateur)"}</div>${real&&!u.emailVerified?'<button class="btn alt" id="cv" style="color:var(--acc)">Renvoyer l\'e-mail de vérification</button>':''}${fld('ph','Téléphone','tel','+33 6 00 00 00 00')}<div class="err" id="ce"></div><button class="btn" id="cok">Enregistrer</button><button class="btn alt" id="cno">Fermer</button>`);
   $('ph').value=pr.phone||'';$('cno').onclick=()=>$('layer').innerHTML='';
-  if($('cv'))$('cv').onclick=async()=>{try{await u.sendEmailVerification();toast('E-mail envoyé')}catch{toast('Réessaie plus tard')}};
+  if($('cv'))$('cv').onclick=async()=>{try{await u.sendEmailVerification(ACS());toast('E-mail envoyé')}catch{toast('Réessaie plus tard')}};
   $('cok').onclick=async()=>{const t=$('ph').value.trim();if(t&&!RE_TEL.test(t))return $('ce').textContent='Numéro invalide';try{await fs.doc('private/'+me.uid).set({phone:t},{merge:true});$('layer').innerHTML='';toast('Enregistré')}catch{$('ce').textContent='Impossible'}};
 }
 async function exportData(){
@@ -1394,6 +1397,30 @@ $('signupPass').addEventListener('input',()=>{const v=$('signupPass').value;let 
 const gm=document.querySelector('.gate-main');
 $('auth').addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||innerWidth<960||!gm)return;const r=gm.getBoundingClientRect(),x=(e.clientX-(r.left+r.width/2))/innerWidth,y=(e.clientY-(r.top+r.height/2))/innerHeight;gm.style.transform=`perspective(1100px) rotateY(${x*7}deg) rotateX(${-y*6}deg)`});
 $('auth').addEventListener('pointerleave',()=>{if(gm)gm.style.transform=''});
+/* ===== liens e-mail : vérification et mot de passe oublié reviennent sur le site ===== */
+const ACS=()=>({url:location.origin+location.pathname,handleCodeInApp:false});
+async function handleAction(){
+  const q=new URLSearchParams(location.search),mode=q.get('mode'),code=q.get('oobCode');if(!mode||!code)return;
+  history.replaceState(null,'',location.pathname);
+  const box=h=>sheet(`<div style="text-align:center">${h}</div>`),bad=()=>{box('<div style="font-size:54px">⚠️</div><h3>Lien invalide ou expiré</h3><p class="lab" style="text-transform:none">Demande un nouvel e-mail depuis l\'application.</p><button class="btn" id="ax">Fermer</button>');$('ax').onclick=()=>$('layer').innerHTML=''};
+  if(mode==='verifyEmail'){
+    box('<div class="pspin" style="margin:14px auto;border-top-color:#7c5cff"></div><h3>Vérification en cours…</h3>');
+    try{await auth.applyActionCode(code);if(auth.currentUser)await auth.currentUser.reload().catch(()=>{});
+      box('<div style="font-size:54px">✅</div><h3>E-mail vérifié</h3><p class="lab" style="text-transform:none">Ton adresse est confirmée. Tu peux continuer.</p><button class="btn" id="ax">Continuer</button>');$('ax').onclick=()=>location.reload()}catch{bad()}
+  }else if(mode==='resetPassword'){
+    let em='';try{em=await auth.verifyPasswordResetCode(code)}catch{return bad()}
+    sheet(`<h3>Nouveau mot de passe</h3><p class="lab" style="text-transform:none">${esc(em)}</p>${fld('r1','Nouveau mot de passe')}${fld('r2','Confirmer')}<div class="err" id="re"></div><button class="btn" id="rok">Enregistrer</button>`);
+    $('rok').onclick=async()=>{const a=$('r1').value,b=$('r2').value;if(a.length<6)return $('re').textContent='6 caractères minimum';if(a!==b)return $('re').textContent='Les deux mots de passe sont différents';
+      try{await auth.confirmPasswordReset(code,a);box('<div style="font-size:54px">✅</div><h3>Mot de passe modifié</h3><p class="lab" style="text-transform:none">Tu peux te connecter avec ton nouveau mot de passe.</p><button class="btn" id="ax">Se connecter</button>');$('ax').onclick=()=>location.reload()}catch{bad()}};
+  }
+}
+$('forgot').onclick=()=>{
+  const v=$('loginName').value.trim();
+  sheet(`<h3>Mot de passe oublié</h3><p class="lab" style="text-transform:none">Entre l'e-mail de ton compte : tu recevras un lien pour choisir un nouveau mot de passe. (Les comptes créés avec un code d'invitation sans e-mail ne peuvent pas être réinitialisés.)</p>${fld('fe','E-mail','email','ton@email.fr')}<div class="err" id="fer"></div><button class="btn" id="fok">Envoyer le lien</button><button class="btn alt" id="fno">Annuler</button>`);
+  if(v.includes('@'))$('fe').value=v;$('fno').onclick=()=>$('layer').innerHTML='';
+  $('fok').onclick=async()=>{const m=$('fe').value.trim();if(!RE_MAIL.test(m))return $('fer').textContent='E-mail invalide';
+    try{await auth.sendPasswordResetEmail(m,ACS());$('layer').innerHTML='';toast("Si un compte existe, un e-mail vient d'être envoyé")}catch(x){$('fer').textContent=x.code==='auth/user-not-found'?'Aucun compte avec cet e-mail':(ERR[x.code]||x.message)}};
+};
 /* hauteur réelle iOS */
 const vh=()=>document.documentElement.style.height=innerHeight+'px';addEventListener('resize',vh);vh();
 </script>
