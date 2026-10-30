@@ -10,14 +10,17 @@ setTimeout(function(){if(window.__txOK||!document.body)return;document.body.inne
 <title>TalcoExchange</title>
 <meta name="application-name" content="TalcoExchange"><meta name="apple-mobile-web-app-title" content="TalcoExchange"><meta name="apple-mobile-web-app-capable" content="yes"><meta property="og:site_name" content="TalcoExchange">
 <meta name="google-site-verification" content="TUBi6xTFf23UYii6oMmOaSj-DRsPRPsgWL4_IAmncho" />
+<meta name="msvalidate.01" content="1FFE385AAF2FAD2597A1A69FF1DD9127" />
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta name="keywords" content="TalcoExchange, Talco Itn, Itnb talco github, talco exchange message, talco github, messagerie">
 <meta property="og:title" content="TalcoExchange"><meta property="og:description" content="Messagerie TalcoExchange du portail Talco ITN.">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<link rel="icon" href="icons/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16.png">
-<link rel="manifest" href="icons/site.webmanifest">
 <script>try{var PR=[['#6d5dfc','#ff6fa5'],['#4f7cff','#22d3c5'],['#ff6fa5','#ffb454'],['#22d3c5','#4f7cff'],['#ffb454','#ff5470']];window._PR=PR;window._P=Object.assign({mode:'auto',wall:0,ts:1,anim:true,p:0,grad:true,bub:0,font:0,compact:false,enter:true,rr:true,snd:true,prev:true,shape:'round',tmode:'in',pres:true,seen:true,notif:false,h12:false},JSON.parse(localStorage.talco_prefs||'{}'));window._applyP=function(){var h=document.documentElement,P=window._P,c=PR[P.p]||PR[0];P.mode==='auto'?h.removeAttribute('data-mode'):h.setAttribute('data-mode',P.mode);h.dataset.wall=P.wall;h.dataset.anim=P.anim?'on':'off';h.dataset.grad=P.grad?'on':'off';h.dataset.bub=P.bub||0;h.dataset.font=P.font||0;h.dataset.compact=P.compact?'on':'off';h.dataset.shape=P.shape||'round';h.dataset.tm=P.tmode||'in';h.style.setProperty('--ts',P.ts);h.style.setProperty('--a1',c[0]);h.style.setProperty('--a2',c[1]);h.style.setProperty('--acc',c[0]);localStorage.talco_prefs=JSON.stringify(P)};window._applyP()}catch(e){}</script>
 <style>
 :root{--bg:#fff;--bg2:#f2f2f7;--glass:rgba(255,255,255,.72);--text:#000;--sub:#8a8a8e;--line:rgba(60,60,67,.18);--bub:#e9e9eb;--me:#0a84ff;--acc:#0a84ff;--red:#ff3b30;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
@@ -761,6 +764,65 @@ html[data-tm=under] .tm2{display:block}html[data-tm=under] .mt,html[data-tm=off]
 .sp .seg{margin:6px 0 4px}
 @media(max-width:759px){.sheet.sp{top:0;bottom:0;height:100%;border-radius:0;width:100%}}
 .pcard .av{flex:none!important}
+/* ===== Modernisation des écrans d'accès (consentement, connexion, inscription, PIN) ===== */
+#auth,#consent,#refused,#pinGate{--n-bg:#05060c;--n-line:rgba(255,255,255,.1);--n-txt:#f3f4fa;--n-mut:#9aa0b8;--n-grad:linear-gradient(120deg,#7c5cff,#4f8dff 55%,#1de9d4);--n-edge:linear-gradient(140deg,rgba(255,255,255,.42),rgba(255,255,255,.05) 38%,rgba(124,92,255,.6));font-family:Inter,system-ui,sans-serif;color:var(--n-txt)}
+#auth,#pinGate{background:var(--n-bg)!important}
+#auth h1,#auth h2,#pinGate h1,#consent h1,#refused h1{font-family:Sora,Inter,sans-serif;letter-spacing:-.03em}
+#authAmb .blob,#pinAmb .blob{filter:blur(90px)!important;opacity:.5!important}
+#authAmb::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 78%);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent 78%)}
+/* carte */
+#auth .gate-card,#consent .card,#refused .card{border:1px solid transparent;background:linear-gradient(160deg,rgba(20,22,38,.86),rgba(10,11,20,.82)) padding-box,var(--n-edge) border-box;-webkit-backdrop-filter:blur(40px) saturate(170%);backdrop-filter:blur(40px) saturate(170%);box-shadow:0 40px 90px -24px rgba(0,0,0,.8),0 0 90px -34px rgba(124,92,255,.55);color:var(--n-txt)}
+#auth .gate-card{width:420px;max-width:92vw;padding:30px 28px 26px;border-radius:30px}
+#auth .gate-logo{font-size:1.9rem;font-weight:800;background:linear-gradient(120deg,#fff 15%,#cfc6ff 55%,#7ef3e6);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+#auth .gate-sub{color:var(--n-mut);font-size:.78rem;letter-spacing:.06em}
+#auth .gate-tag{display:inline-block;margin-top:.5rem;padding:.3rem .8rem;border-radius:999px;border:1px solid var(--n-line);background:rgba(255,255,255,.05);color:#c9c4ff;font-size:.75rem}
+/* onglets */
+#auth .gate-tabs{background:rgba(255,255,255,.045);border:1px solid var(--n-line);padding:5px;border-radius:17px}
+#auth .gate-tab{font:600 .87rem Inter,sans-serif;color:var(--n-mut);padding:.72rem 0;transition:color .25s}
+#auth .gate-tab.active{color:#fff}
+#auth .gate-tab-bg{border-radius:13px!important;background:linear-gradient(135deg,rgba(124,92,255,.75),rgba(79,141,255,.5))!important;box-shadow:0 8px 22px -8px rgba(124,92,255,.8),inset 0 1px 0 rgba(255,255,255,.28)}
+/* champs */
+#auth .gate-field{height:54px;padding:0 16px;margin-bottom:.75rem;border-radius:15px;background:rgba(255,255,255,.045);border:1px solid var(--n-line);color:var(--n-txt);font-size:.95rem;transition:border-color .25s,box-shadow .25s,background .25s}
+#auth .gate-field::placeholder{color:#6f7590}
+#auth .gate-field:focus{outline:0;background:rgba(124,92,255,.08);border-color:rgba(139,124,255,.85);box-shadow:0 0 0 4px rgba(124,92,255,.18)}
+#auth .pw-eye{color:#8a90ab;transition:color .2s}#auth .pw-eye:hover{color:#fff}
+#auth .plink2,#auth .gate-legal a{color:#b6acff}
+/* boutons */
+#auth .gate-btn,#consent .btn,#refused .btn{position:relative;overflow:hidden;width:100%;height:54px;border:0;border-radius:15px;color:#fff;font:700 .95rem Sora,Inter,sans-serif;background:var(--n-grad);background-size:180% 100%;box-shadow:0 14px 34px -10px rgba(124,92,255,.85),inset 0 1px 0 rgba(255,255,255,.3);transition:transform .2s,background-position .6s}
+#auth .gate-btn::after,#consent .btn::after,#refused .btn::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s}
+#auth .gate-btn:hover,#consent .btn:hover,#refused .btn:hover{background-position:100% 0;transform:translateY(-1px)}
+#auth .gate-btn:hover::after,#consent .btn:hover::after,#refused .btn:hover::after{transform:translateX(120%)}
+#auth .gate-btn:active,#consent .btn:active,#refused .btn:active{transform:scale(.98)}
+#auth .gate-btn.ghost,#consent .btn.alt{background:transparent;border:1px solid var(--n-line);box-shadow:none;color:var(--n-mut)}
+#auth .gate-btn.ghost:hover,#consent .btn.alt:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+#consent .btn.alt{margin-top:10px}
+/* inscription */
+#auth .sg-dots i{width:6px;height:6px;border-radius:6px;background:rgba(255,255,255,.18);transition:width .35s,background .35s}
+#auth .sg-dots i.on{width:28px;background:var(--n-grad)}
+#auth .sg-t{font:700 1.2rem Sora,sans-serif;letter-spacing:-.025em;margin-bottom:1rem}
+#auth .sg-bar i{background:var(--n-grad)}
+#auth .gate-error{padding:0;border-radius:12px}
+#auth .gate-error:not(:empty){padding:.6rem .8rem;background:rgba(255,84,110,.1);border:1px solid rgba(255,84,110,.35);color:#ffb3bf}
+#auth .gate-feats{gap:8px;flex-wrap:wrap;justify-content:center}
+#auth .gate-feats span{border:1px solid var(--n-line);background:rgba(255,255,255,.04);border-radius:999px;padding:.35rem .8rem;font-size:.72rem;color:var(--n-mut)}
+/* consentement / refus */
+#consent,#refused{background:radial-gradient(90% 60% at 15% 0%,rgba(124,92,255,.38),transparent 60%),radial-gradient(70% 50% at 100% 100%,rgba(29,233,212,.2),transparent 60%),#05060c;color:var(--n-txt)}
+#consent .card,#refused .card{width:100%;max-width:440px;padding:34px 28px;border-radius:30px;text-align:center}
+#consent .logo,#refused .logo{width:72px;height:72px;margin:0 auto 16px;display:grid;place-items:center;font-size:32px;border-radius:22px;background:linear-gradient(145deg,rgba(124,92,255,.38),rgba(29,233,212,.2));border:1px solid var(--n-line)}
+#consent h1,#refused h1{font-size:1.6rem;font-weight:800;margin:0 0 .5rem;color:#fff}
+#consent p,#refused p{color:var(--n-mut);font-size:.92rem;line-height:1.6;margin:0 0 1.2rem}
+#consent .docs{background:transparent;overflow:visible;border-radius:0;margin-bottom:18px}
+#consent .docs button{border:1px solid var(--n-line);border-radius:14px;background:rgba(255,255,255,.04);color:var(--n-txt);font-size:.92rem;margin-bottom:8px;transition:background .2s,border-color .2s}
+#consent .docs button:hover{background:rgba(124,92,255,.12);border-color:rgba(139,124,255,.5)}
+#consent .docs button span{color:#b6acff}
+/* PIN */
+#pinGate .pk button{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid var(--n-line);color:#fff;font:600 1.5rem Sora,sans-serif;transition:background .15s,transform .15s}
+#pinGate .pk button:active{background:rgba(124,92,255,.4);transform:scale(.93)}
+#pinGate .pdots i{border-color:rgba(255,255,255,.4)}
+#pinGate .pdots i.on,#pinGate .pdots i.f,#pinGate .pdots i.fill{background:var(--n-grad);border-color:transparent;box-shadow:0 0 14px rgba(124,92,255,.85)}
+#pinGate .plink{color:#b6acff}
+@media(max-width:420px){#auth .gate-card{padding:24px 20px 22px;border-radius:26px}}
+@media(prefers-reduced-motion:reduce){#auth *,#consent *,#pinGate *{animation-duration:.01s!important;transition-duration:.01s!important}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -922,19 +984,19 @@ if(typeof firebase==='undefined'){window.__txOK=1;document.body.innerHTML='<div 
 (function(){let n=0;const show=m=>{if(n++>2||!m||/ResizeObserver|Script error/.test(m))return;const d=document.createElement('div');d.style.cssText='position:fixed;left:10px;right:10px;top:10px;z-index:99999;background:#3a0f18;color:#fff;border:1px solid #ff5470;border-radius:14px;padding:10px 14px;font:13px system-ui;box-shadow:0 10px 30px rgba(0,0,0,.5)';d.innerHTML='⚠️ Erreur : '+String(m).replace(/[<>&]/g,'')+' <button style="margin-left:8px;color:#ff9db0" onclick="this.parentNode.remove()">Fermer</button> <button style="color:#9db8ff" onclick="window.diag&&diag()">Diagnostic</button>';document.body.appendChild(d)};
 addEventListener('error',e=>show(e.message));addEventListener('unhandledrejection',e=>{const r=e.reason;show(r&&(r.code||r.message)||String(r))})})();
 
-/* Config Firebase du projet exchange-f4322 */
+/* Config Firebase du projet itn-1 (itn-1-b2660) */
 const firebaseConfig={
-  apiKey:"AIzaSyAmhu0sxt5v_D6ByT94z66cqlnWSIz5fow",
-  authDomain:"exchange-f4322.firebaseapp.com",
+  apiKey:"AIzaSyDSlrxGsR6SyAlTDkTecOo_WZQafIrCRzI",
+  authDomain:"itn-1-b2660.firebaseapp.com",
   /* ⚠️ Vérifie cette URL dans Console Firebase > Realtime Database (en haut de l'onglet Données) */
-  databaseURL:"https://exchange-f4322-default-rtdb.firebaseio.com",
-  projectId:"exchange-f4322",
-  storageBucket:"exchange-f4322.firebasestorage.app",
-  messagingSenderId:"10821754686",
-  appId:"1:10821754686:web:4be1a2455315d41646566f"
+  databaseURL:"https://itn-1-b2660-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId:"itn-1-b2660",
+  storageBucket:"itn-1-b2660.firebasestorage.app",
+  messagingSenderId:"1014813288647",
+  appId:"1:1014813288647:web:1dd6fac88435d63650b6e2"
 };
-firebase.initializeApp(firebaseConfig);
-const auth=firebase.auth(),db=firebase.database(),fs=firebase.firestore(),TS=firebase.database.ServerValue.TIMESTAMP;
+const fbApp=firebase.initializeApp(firebaseConfig,'p0'); /* même nom que le portail : la session itn-1 est partagée */
+const auth=fbApp.auth(),db=fbApp.database(),fs=fbApp.firestore(),TS=firebase.database.ServerValue.TIMESTAMP;
 try{fs.settings({experimentalAutoDetectLongPolling:true,merge:true})}catch{}
 const $=id=>document.getElementById(id);
 window._applyP0=window._applyP;let cst;
@@ -1157,7 +1219,7 @@ function renderMsgs(sn){
     h+=`<div class="row ${mine?'me':'them'}${first?' first':''}${last?' last':''}${rx?' hasrx':''}${big?' bigemo':''}${m.img&&!m.text?' imgonly':''}${init&&!seen.has(m.id)?' new':''}" id="m-${m.id}"><div class="b" data-m="${m.id}">${q}${m.img?`<img class="mi" src="${esc(m.img)}" alt="photo">`:''}${m.aud?vm(m):''}<span class="tx">${lk(m.text||'')}</span><span class="mt">${(window._P.stars||{})[cur.id+':'+m.id]?'⭐ ':''}${m.edited?'modifié · ':''}${hm(T)}${tk}</span></div>${rx?`<div class="rx">${rx}</div>`:''}${last?`<div class="tm2">${hm(T)}${tk}</div>`:''}</div>`;
   });
   if(init&&window._P.snd!==false&&a.some(m=>!seen.has(m.id)&&m.from!==me.uid))beep();
-  if(init&&window._P.notif&&document.hidden&&window.Notification&&Notification.permission==='granted'){const n2=a.filter(m=>!seen.has(m.id)&&m.from!==me.uid).pop();if(n2)try{new Notification(cur.name,{body:n2.text||'📷 Photo',icon:'icons/icon-192.png'})}catch{}}
+  if(init&&window._P.notif&&document.hidden&&window.Notification&&Notification.permission==='granted'){const n2=a.filter(m=>!seen.has(m.id)&&m.from!==me.uid).pop();if(n2)try{new Notification(cur.name,{body:n2.text||'📷 Photo',icon:'icon-192.png'})}catch{}}
   a.forEach(m=>seen.add(m.id));
   el.innerHTML=a.length?h:'<div class="hint"><span>👋 Dis bonjour à '+esc(cur?cur.name:'')+'</span></div>';
   if(near||!init){el.scrollTop=el.scrollHeight;el.dataset.init=1}
@@ -1550,5 +1612,6 @@ const vh=()=>document.documentElement.style.height=innerHeight+'px';addEventList
 
 window.__txOK=1;
 </script>
+<script>if("serviceWorker" in navigator)addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});</script>
 </body>
 </html>
