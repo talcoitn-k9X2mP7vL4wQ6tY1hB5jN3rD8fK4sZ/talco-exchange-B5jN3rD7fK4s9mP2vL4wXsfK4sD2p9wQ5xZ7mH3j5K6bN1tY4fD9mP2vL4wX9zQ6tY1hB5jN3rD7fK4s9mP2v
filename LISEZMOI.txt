@@ -1,0 +1,10 @@
+TalcoExchange — INTERFACE (messages)
+GroupeTalco / TalcoAdministration / © TalcoInc2026
+
+Depot sur le compte GitHub "talcoitn-k9x2mp7vl4wq6ty1hb5jn3rd8fk4sz", nom du depot :
+exchange-3-a8f4k92m7p1x5v3n6q8w2z9c4b7j0h5r2t8y6u3i1o9l4s7d0g2e5a8c1v4b7n9m2q5w8e3r6t9y1u4i7o0p2a5s8
+Tous les fichiers a la racine du depot.
+
+- Plus de formulaire de connexion : cette page ne fonctionne que dans le login commun (https://natlacaxi.github.io/exchange-3/), sinon elle y renvoie.
+- Elle recoit son identifiant interne par message (origine verifiee), ouvre sa session Firebase (itn-3) et la garde.
+- Deconnexion : previent le login, qui deconnecte la session enregistree.
